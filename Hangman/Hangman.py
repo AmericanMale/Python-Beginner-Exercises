@@ -17,11 +17,11 @@ print("Welcome to Hangman.")
 print("The game is lost with the sixths wrong guess. Good luck!")
 print("The word: " + word_hidden)
 
-guessed_word = []
 _list = []
 
 while wrong < 6 and right < word_length:
     try:
+        guessed_word = []
         a = input("Guess a letter: ").upper()
         if a in numbers or len(a) > 1 or a in _list:
             raise
@@ -33,7 +33,7 @@ while wrong < 6 and right < word_length:
                 if w != a and w not in _list:
                     w = "_"
                 guessed_word += w
-            print(*guessed_word[-word_length:])
+            print(*guessed_word)
             right += word_letter_count
         else:
             print("The word doesn't contain letter " + a)
